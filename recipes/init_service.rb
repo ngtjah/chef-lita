@@ -34,7 +34,8 @@ when 'init'
 else
   include_recipe 'runit'
 
-  puts node['lita']['runit']['env'].to_yaml
+  require 'pp'
+  pp node['lita']['runit']['env']
 
   runit_service 'lita' do
     cookbook node["lita"]["config_cookbook"]
